@@ -2,6 +2,7 @@
 
 import React from 'react';
 import dynamic from 'next/dynamic';
+import { AutoDemoTour } from '@/components/AutoDemoTour';
 import { AgentStage, AgentConfig } from '@/types/agent';
 import { 
   Brain, 
@@ -35,6 +36,10 @@ interface HeaderBarProps {
   onOpenExplainer: () => void;
   onOpenAddMemory: () => void;
   onTipFIL: (amount: number, txHash?: string) => void;
+  onFastDrain: () => void;
+  onReset: () => void;
+  onSelectMemory: (id: string) => void;
+  onStepEpoch: (count: number) => void;
 }
 
 export const HeaderBar: React.FC<HeaderBarProps> = ({
@@ -45,6 +50,10 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({
   onOpenExplainer,
   onOpenAddMemory,
   onTipFIL,
+  onFastDrain,
+  onReset,
+  onSelectMemory,
+  onStepEpoch,
 }) => {
   const getStageBadge = (s: AgentStage) => {
     switch (s) {
@@ -124,6 +133,16 @@ export const HeaderBar: React.FC<HeaderBarProps> = ({
         </a>
 
         {/* Reown AppKit Dynamic Wallet Button */}
+        <div className="shrink-0">
+          <AutoDemoTour 
+            onFastDrain={onFastDrain}
+            onTipFIL={onTipFIL}
+            onReset={onReset}
+            onSelectMemory={onSelectMemory}
+            onStepEpoch={onStepEpoch}
+          />
+        </div>
+
         <div className="shrink-0">
           <ReownWalletButton onTipFIL={onTipFIL} />
         </div>

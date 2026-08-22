@@ -37,7 +37,7 @@ export default function MementoMoriApp() {
 
   return (
     <main className="min-h-screen bg-[#070A0F] text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-black">
-      {/* 1. Header Bar with Web3 Wallet & Calibration Sync */}
+      {/* 1. Header Bar with Web3 Wallet & Calibration Sync & Auto Tour */}
       <HeaderBar
         stage={vitalSigns.currentStage}
         config={config}
@@ -46,6 +46,10 @@ export default function MementoMoriApp() {
         onOpenExplainer={() => setIsExplainerOpen(true)}
         onOpenAddMemory={() => setIsAddMemoryOpen(true)}
         onTipFIL={handleTipFIL}
+        onFastDrain={handleFastDrain}
+        onReset={handleReset}
+        onSelectMemory={id => setSelectedMemoryId(id)}
+        onStepEpoch={stepEpoch}
       />
 
       {/* 2. Main Content Area */}
