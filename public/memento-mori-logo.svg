@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#082f49" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#070a0f" stop-opacity="1" />
+    </radialGradient>
+    <radialGradient id="glowGreen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="1" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="100" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="4" />
+
+  <!-- Outer Orbit Rings -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#06b6d4" stroke-width="2" stroke-dasharray="6,6" opacity="0.4" />
+  <circle cx="256" cy="256" r="160" fill="#0f172a" stroke="#10b981" stroke-width="3" filter="url(#glow)" opacity="0.9" />
+
+  <!-- Neural Synapse Lines -->
+  <line x1="256" y1="140" x2="170" y2="210" stroke="#38bdf8" stroke-width="2.5" opacity="0.6" />
+  <line x1="256" y1="140" x2="342" y2="210" stroke="#38bdf8" stroke-width="2.5" opacity="0.6" />
+  <line x1="170" y1="210" x2="200" y2="320" stroke="#38bdf8" stroke-width="2.5" opacity="0.6" />
+  <line x1="342" y1="210" x2="312" y2="320" stroke="#38bdf8" stroke-width="2.5" opacity="0.6" />
+  <line x1="200" y1="320" x2="256" y2="370" stroke="#38bdf8" stroke-width="2.5" opacity="0.6" />
+  <line x1="312" y1="320" x2="256" y2="370" stroke="#38bdf8" stroke-width="2.5" opacity="0.6" />
+  <line x1="170" y1="210" x2="342" y2="210" stroke="#f59e0b" stroke-width="2" opacity="0.5" />
+
+  <!-- Center Hourglass Brain Core -->
+  <polygon points="230,220 282,220 256,256" fill="#f59e0b" opacity="0.9" />
+  <polygon points="256,256 230,292 282,292" fill="#ef4444" opacity="0.9" />
+  <circle cx="256" cy="256" r="5" fill="#ffffff" />
+
+  <!-- Synapse Nodes -->
+  <circle cx="256" cy="140" r="10" fill="#10b981" filter="url(#glow)" />
+  <circle cx="170" cy="210" r="12" fill="#06b6d4" filter="url(#glow)" />
+  <circle cx="342" cy="210" r="12" fill="#06b6d4" filter="url(#glow)" />
+  <circle cx="200" cy="320" r="9" fill="#f59e0b" filter="url(#glow)" />
+  <circle cx="312" cy="320" r="9" fill="#f59e0b" filter="url(#glow)" />
+  <circle cx="256" cy="370" r="11" fill="#ef4444" filter="url(#glow)" />
+</svg>
